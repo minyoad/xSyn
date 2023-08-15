@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+    api-container:
+        image: hdenholm/xsyn
+        container_name: xbrowsersync-api
+
+        environment:
+        - XS_SRV_MAXSYNC=5000
+        restart: always
+        ports:
+        - "8089:80"
+        volumes:
+        - ~/xbrowsersync/data:/data
+
